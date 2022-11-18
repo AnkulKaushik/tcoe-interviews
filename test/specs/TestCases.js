@@ -1,4 +1,6 @@
-describe('validateUrl', () => {
+describe('validate test cases', () => {
+
+    // Site Search Functionality 
 
     it('verify search', async() => {
         browser.url("https://www.cnn.com/")
@@ -12,25 +14,25 @@ describe('validateUrl', () => {
         await click.setValue("modi")
         await browser.executeAsync((done) => {
                 console.log('Wake me up before you go!');
-                setTimeout(done, 5000);
+                setTimeout(done, 2000);
             });
         const btn = await $(".JwELA");
         btn.click();
         
         expect(browser).toHaveUrlContaining('modi')
 
-        // await val.click()
     });
+
+    // verify  video 
 
    it ('verify video ',async()=>{
         browser.url("https://edition.cnn.com/videos/entertainment/2022/11/11/henry-winkler-career-struggle-grease-wtcw-cprog-vpx.cnn");
        const video= await $(".video-inline__video-resource");
        await video.click()
+       browser.pause(3000)
        await browser.executeAsync((done) => {
-           console.log('Wake me up before you go!');
            setTimeout(done, 15000);
         });
-        browser.pause(3000)
         
      
         
@@ -40,22 +42,22 @@ describe('validateUrl', () => {
         const video= await $(".video-inline__video-resource");
         await video.click()
         await browser.executeAsync((done) => {
-            console.log('Wake me up before you go!');
             setTimeout(done, 15000);
          });
-         browser.pause(3000)
+         
          
         
     });
+
+    // verify image
+
+
     it('image verifying', async () => {
         let a = 1;
         let i = 1;
         await browser.setWindowRect(0, 0, 1200, 800);
         await browser.url("http://edition.cnn.com/travel/gallery/top-christmas-markets/index.html")
-        // await browser.executeAsync((done) => {
-        //     console.log('Wake me up before you go!');
-        //     setTimeout(done, 15000);
-        // });
+       
         const elem = await $('.Image__component');
         await elem.scrollIntoView();
         const next_image = await $(".GalleryHeroDecorators__next");
