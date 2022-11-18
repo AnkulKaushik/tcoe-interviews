@@ -24,6 +24,7 @@
     "wdio-chromedriver-service": "^7.3.2"
   },
   "dependencies": {
+    "assert": "^2.0.0",
     "express": "^4.18.1"
   }
 }
